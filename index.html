@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Namaste React</title>
+</head>
+    <!-- Below Order matters in html body, It should be in sequence -->
+<body>
+    
+    <h1>Hello top of root</h1>
+        <div id="root">
+            <!-- This h1 tag will be replaced by the parent where there is root render -->
+            <h1>I'am Vasanth</h1> 
+        </div>
+    <h1>Hello bottom of root</h1>
+    <!-- Javascript code below to display Hello World -->
+    
+    <!-- <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML= "Hello World from Javascript!";
+
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+    </script> -->
+
+    <!-- Using the below links we inserted react into our project  -->
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- React Code -->
+    <script src="App.js"></script>
+
+</body>
+</html>
