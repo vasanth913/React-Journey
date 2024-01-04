@@ -1,0 +1,39 @@
+{
+  "_comment": "Remove the main:App.js for the production build and do npx parcel build index.html",
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "\"This is React Journey by Vasanth Ravi\"",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasanth913/React-Journey.git"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react",
+    "\u001b[Dakshay",
+    "saini"
+  ],
+  "author": "Vasanth Ravi\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C and Akshay Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasanth913/React-Journey/issues"
+  },
+  "homepage": "https://github.com/vasanth913/React-Journey#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
+}

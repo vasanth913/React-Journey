@@ -9,12 +9,12 @@
     <!-- Below Order matters in html body, It should be in sequence -->
 <body>
     
-    <h1>Hello top of root</h1>
+    <!-- <h1>Hello top of root</h1> -->
         <div id="root">
             <!-- This h1 tag will be replaced by the parent where there is root render -->
-            <h1>I'am Vasanth</h1> 
+            <h1>Not Rendered</h1> 
         </div>
-    <h1>Hello bottom of root</h1>
+    <!-- <h1>Hello bottom of root</h1> -->
     <!-- Javascript code below to display Hello World -->
     
     <!-- <script>
@@ -27,11 +27,13 @@
 
     <!-- Using the below links we inserted react into our project  -->
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Removed these two CDN links below because react is installed using npm   -->
+
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 
     <!-- React Code -->
-    <script src="App.js"></script>
+    <script type="module" src="./src/App.js"></script>
 
 </body>
 </html>
