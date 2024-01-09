@@ -238,4 +238,107 @@ For eg: export const CDN_URL = "https://url"
   --> The reason const value is getting updated in useState it's because react is rendering the component again and creates a new instance
 
 # State updating
-  --> Whenever state varibales update, react triggers a reconciliation cycle (re-renders the component) 
+  --> Whenever state varibales update, react triggers a reconciliation cycle (re-renders the component)
+
+# useEffect and useState
+
+   --> If no dependency array ==> useEffect is called on every render
+   --> If dependency array is empty  = [] => useEffect is called on initial render just once
+   --> If dependency array is [btnNameReact] => called everytime btnNameReact is updated
+   --> Never create a useState inside the if condition, forLoop and function
+
+# Router
+   --> Never use anchor <a></a> tag to route to new page, it will reload the page instead use <Link />
+
+# Two types of Routing in Web Apps
+  -- Client Side Routing
+  -- Server Side Routing
+  # Server Side Routing
+    --> Make a network call and particular page comes from the server
+  # Client Side Routing
+    --> Doesn't make any network call loads the component page (It's a example of single page application)
+
+# Dynamic Routing
+    --> path:"/restaurants/:resId", resId will be unique and it has dynamic routing
+
+# Class Based Component
+   --> Loading a class based component, it's like initiating the class
+
+# Lifecycle methods
+   --> When a class is initiated, 
+       Step 1: --> Constructor is called
+       Step 2: --> Render is called
+       Step 3: --> After the render, component is mounted, componentDidMount is called
+       
+       DOM Manipulation happens after completing constructor and render phase*** - React is optimizing it by updating the DOM at last
+
+       Updating DOM is expensive and takes lot of time
+
+   # updating phase:
+     --> After the mounting phase, updating phase will get starts with setState --> render -->  React updates DOM and refs --> componentDidUpdate
+
+  Link to refer Life cycle method : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+   # unmounting phase:
+     --> While navigating to another component, unmounting should be done in that component. For Eg: clearing the setInterval in that component
+
+  # Github user API link
+
+  --> https://docs.github.com/en/rest/users?apiVersion=2022-11-28
+
+  # debugger
+
+  -->  We can use debugger to verify the code how component works (debugger;)
+
+  # Single Responsibility Principle
+
+  --> Each component should have only one responsibility for example restaurant card should
+  have details only about the restaurant card
+
+  # Emoji Symbol
+
+  --> Windows Logo + semicolon; we get emojii in desktop
+
+  # Optimizing/ bundling the apps even further
+    There are different names like below: 
+    we can call it as,
+   --> App Chunking
+   --> Code Splitting
+   --> Dynamic Bundling
+   --> Lazy Loading
+   --> On demand Loading
+
+   Eg: Make my trip use case, 
+    --> For flights tab, we can have one main js file bundled
+    --> For Hotels tab, we can have one main js file bundled
+
+  Logically we are making it into smaller applications and the concept of lazy loading is that when we load the application, the particular page(For eg: Grocery) it won't load.
+  Only when we click on the tab or go to the page, the particular page will get loaded
+
+  Link to learn Lazy Loading: https://react.dev/reference/react/lazy
+    --> Without Suspense, the above code throws an error in the webpage, because the component won't be loaded in the first instance as it is trying to render
+  
+  I can use lazy loading to make the application into different chunks
+
+  # CSS
+    --> Sass/scss - Writing CSS with super powers,little more advanced and it makes easy
+    --> Styled components
+    --> Bootstrap
+    --> Material UI
+    --> Chakara UI
+    --> Ant Design
+    --> Tailwind CSS
+  
+  # Tailwind CSS
+    --> Link: https://tailwindcss.com/docs/installation/framework-guides
+    --> Tailwind css with post CSS, postcss is a tool for transforming CSS with Javascript
+    --> npx tailwindcss init gives a tailwind.config.js
+    --> Create a .postcssrc file in your project root, and enable the tailwindcss plugin and also copy the contents from tailwind link
+    --> Configure the tailwindcss template from the link, copy and paste it
+    --> Create a ./src/index.css file and add the @tailwind directives for each of Tailwind’s layers.
+    --> Tailwind CSS intellisense is one of the best extension in VS code
+    --> In VS code, if it's not showing suggestion we need to give ctrl+spacebar in keyboard
+    --> Only import the class which is used into the app
+    --> If whole application has m-4 then it will include only one time m-4 class
+    --> Tailwind CSS is very lightweight
+
