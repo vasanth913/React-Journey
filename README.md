@@ -342,3 +342,35 @@ For eg: export const CDN_URL = "https://url"
     --> If whole application has m-4 then it will include only one time m-4 class
     --> Tailwind CSS is very lightweight
 
+  # Higher Order Component
+    --> HOC takes a component, enhance that component and returns the component
+  
+  # Ui and Data Layer
+    --> Ui layer mostly consists of JSX
+    --> Data layer(State, props, local variables, local storage) is very important in the UI application
+    --> React Dev tools is one of the very useful extension for the development
+    --> After installing React Dev tools, in console we can see components and profiler
+    --> UI Layer(Virtual Dom) on the left and Data Layer(Props) on the right 
+    --> Using Profiler, we can record our movements in the react page, we can also check how much time it takes for the components to load
+  
+  # Controlled and uncontrolled component
+    --> When a component has its own state then it is called uncontrolled component
+    --> When a child component is controlled by the parent component using state then it is controlled component
+    
+  # Lifting State Up
+    --> Lifting the state up if we want to control the children by the parent component
+    Eg: Accordian (Where when we open one accordian, the other accordian should close)
+    Link: https://react.dev/learn/sharing-state-between-components
+  
+  # Props Drilling
+    --> Passing props from parent component to multiple child component
+  
+  # React Context
+    --> React Context avoids the props drilling in React, which keeps the global data and any component  can access
+      Eg: Logged in User, Dark and light theme
+    --> First we need to create context, then we need to use context
+    --> Don't use context all over the places, do it when you need the data all over the application
+    
+
+
+

@@ -20,4 +20,25 @@ const RestaurantCard = (props) => {
     )
 }
 
+//Higher Order Component
+
+//input  - Restaurant Card ==> RestaurantCardOpen
+
+export const withOpenLabel = (RestaurantCard) => {
+
+    return (props) => {
+        return (
+            <div className="relative">
+                    <div className="absolute left-0 top-0 h-6 w-6">
+                        <div
+                        className="absolute transform -rotate-45 bg-green-600 text-center text-white font-semibold py-1 left-[15px] top-[14px] w-[60px] rounded-lg">
+                            Open
+                        </div>
+                    </div>
+                <RestaurantCard {...props} />
+            </div>
+        )
+    }
+}
+
 export default RestaurantCard;

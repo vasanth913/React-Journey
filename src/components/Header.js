@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import Swiggy from "../../images/swiggy.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Switcher from "./Switcher";
+import UserContext from "../utils/UserContext";
 
 export const Header = () => {
     const [toggle, setToggle] = useState(true);
+
+    const {loggedInUser} = useContext(UserContext);
 
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && 
         window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -55,6 +58,7 @@ export const Header = () => {
                     </li>
                     <li>Cart</li>
                     <li><button className="login" onClick={btnChange}>{toggle? 'Login' : 'Logout'}</button></li>
+                    <li className="font-bold">{loggedInUser}</li>
                     <li><Switcher/></li>
                 </ul>
             </div>
