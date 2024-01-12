@@ -9,7 +9,9 @@ import Error from "./components/Error";
 import UserContext from "./utils/UserContext";
 import  {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import Shimmer from "./components/Shimmer";
-
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 /** Optimizing our app even further and we can also call it as any of them as below:
  
@@ -34,17 +36,19 @@ const AppLayout = () => {
     },[])
 
     return (
-        //User Provider has default value
-        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
-            {/* It has Vasanth Ravi in other components */}
-            <div className="app">
-                {/* It has Vasanth Ravi ❤️ in header component */}
-                {/* <UserContext.Provider value={{loggedUser: 'Vasanth Ravi ❤️'}}> */}
-                    <Header/>
-                {/* </UserContext.Provider> */}
-                <Outlet />
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+         {/* User Provider has default value */}
+            <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+                {/* It has Vasanth Ravi in other components */}
+                <div className="app">
+                    {/* It has Vasanth Ravi ❤️ in header component */}
+                    {/* <UserContext.Provider value={{loggedUser: 'Vasanth Ravi ❤️'}}> */}
+                        <Header/>
+                    {/* </UserContext.Provider> */}
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 }
 
@@ -72,6 +76,10 @@ const appRouter = createBrowserRouter([
             {
                 path:"/restaurants/:resId",
                 element: <RestaurantMenu/>
+            },
+            {
+                path:"/cart",
+                element: <Cart/>
             }
         ],
         errorElement: <Error />

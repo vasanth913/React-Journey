@@ -6,7 +6,7 @@ import RestaurantCategory from "../components/RestaurantCategory";
 
 const RestaurantMenu = () => {
 
-    const [showIndex, setShowIndex] = useState(0);
+    const [showIndex, setShowIndex] = useState(null);
 
     const {resId} = useParams();
 
@@ -29,7 +29,9 @@ const RestaurantMenu = () => {
             {
                 itemCategories.map((category, index)=>{
                     // Controlled Component
-                    return (<RestaurantCategory isShowItem={showIndex === index ? true: false} handleClick={()=> setShowIndex(index)}key={category?.card?.card.title} data={category?.card?.card} />)
+                    return (<RestaurantCategory isShowItem={(showIndex === index ? true: false)} handleClick={()=> {
+                        setShowIndex(index)
+                }} key={category?.card?.card.title} data={category?.card?.card} />)
                 })
             }
         </div>

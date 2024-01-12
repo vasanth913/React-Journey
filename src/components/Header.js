@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Switcher from "./Switcher";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
     const [toggle, setToggle] = useState(true);
 
     const {loggedInUser} = useContext(UserContext);
 
+    //Subscring the store using the Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && 
         window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark')
@@ -56,7 +60,7 @@ export const Header = () => {
                     <li>
                       <Link to="/grocery">Grocery</Link>
                     </li>
-                    <li>Cart</li>
+                    <li><Link to="/cart">🛒{cartItems?.length}  items</Link></li>
                     <li><button className="login" onClick={btnChange}>{toggle? 'Login' : 'Logout'}</button></li>
                     <li className="font-bold">{loggedInUser}</li>
                     <li><Switcher/></li>

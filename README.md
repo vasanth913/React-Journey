@@ -371,6 +371,26 @@ For eg: export const CDN_URL = "https://url"
     --> First we need to create context, then we need to use context
     --> Don't use context all over the places, do it when you need the data all over the application
     
+  # Redux ToolKit
+     --> Redux is not mandatory in the application. Only large application needs redux. Small-size/medium-size application is not needed redux
+     --> React and Redux are two different libraries
+     --> Use Redux wisely in your application
+     --> Redux offers easy debugging
+     --> Redux is not only library, there is also library which is gaining popularity. Eg: Zustand
+     --> Redux is a predictable state container for JS Apps.
+  
+  # Redux workflow
+    Write Flow -->  Click the Add button --> dispatch an action --> reducer function --> modify the slice of the redux store
+    Read Flow --> From the store -->(Selector) Subscribing to the store --> updating the cart
+    --> Subscribing to the store means "Sync with the Store"
+
+  # Redux Toolkit Steps
+   --> Install @reduxjs/toolkit and react-redux
+   --> Build our store
+   --> Connect our store to the app
+   --> Create a cart slice
+   --> Dispatch an action
+   --> Read the data using selector
 
 
 

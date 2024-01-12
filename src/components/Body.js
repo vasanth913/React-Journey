@@ -23,6 +23,7 @@ const Body = () => {
 
     const RestaurantCardOpen = withOpenLabel(RestaurantCard);
 
+
     // const [debouncedInputValue, setDebouncedInputValue] = useState("");
 
     // If no dependency array ==> useEffect is called on every render
@@ -44,21 +45,22 @@ const Body = () => {
     },[searchText, 1000]);
 
     const fetchData = async () => {
-        const data = await fetch(
+   
+        const data1 = await fetch(
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
         )
 
-    const json = await data.json();
+    const json = await data1.json();
 
-    console.log('json ***', json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log('json ***', json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     //Optional Chaining
 
     setListOfRestaurants(
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       );
     setFilteredRestaurant(
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       );
     }
 
@@ -119,10 +121,10 @@ const Body = () => {
             <div className="filter"> 
                 <button className="bg-green-400 px-4 py-2 mx-2 rounded-xl" onClick={topRatedRestaurant}>Top Rated Restaurant</button>
             </div>
-            <div className="input"> 
+            {/* <div className="input"> 
               <label>UserName:</label>
               <input type="text" value={loggedInUser} onChange={(e)=>handleInput(e)} />
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-wrap gap-0.5 justify-center">
                 {
