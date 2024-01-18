@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import Swiggy from "../../images/swiggy.png";
+import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Switcher from "./Switcher";
@@ -42,6 +43,7 @@ export const Header = () => {
         dark:bg-gradient-to-l from-orange-300 h-16 size-full">
             <div className="logo-container">
               <img className="w-50" src={Swiggy} width={100} height={100} loading="lazy"></img>
+              {/* <img className="w-50"  width={80} height={80} loading="lazy" src={LOGO_URL} /> */}
             </div>
             <div className="flex items-center">
                 <ul className="flex gap-5 mx-4">

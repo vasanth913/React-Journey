@@ -392,5 +392,54 @@ For eg: export const CDN_URL = "https://url"
    --> Dispatch an action
    --> Read the data using selector
 
+  # Type of Testing (developer)
+    --> Unit Testing - Testing the component in isolation (Eg: Testing the specific component)
+    --> Integration Testing (Testing the feature of multiple components as it is interlinked with eachother Eg: Search and display the results)
+    --> End to End Testing - e2e Testing (User Lands on the site till the user leaves the website)
+
+  # React Testing Library
+    --> React Testing library is built on top of DOM Testing Library, it adds more feature
+    --> React Testing library also uses jest, jest is a delightful javascript testing framework with a focus on simplicity
+     Step 1: -- npm i -D @testing-library/react
+     Step 2:-- npm i -D jest
+    --> Jest in turn uses babel, so we need to install babel dependencies
+      Step 3: -- npm i -D babel-jest @babel/core @babel/preset-env
+      Step 4: --> Create a new file, babel.config.js and write the configuration
+      Step 5: --> We need to make this change because to disable default  babel transpilation,
+    go to parcel documentation, click javascript and go to .parcelrc and copy the configuration by creating a new file .parcelrc
+      Step 6: --> Jest Configuration, npx jest --init
+              -- Typescript No
+              -- jsdom (browser-like) --> need a browser like environment , parces and interacts with assembled HTML just like browser
+        √ Would you like to use Typescript for the configuration file? ... no
+        √ Choose the test environment that will be used for testing » jsdom (browser-like)
+        √ Do you want Jest to add coverage reports? ... yes
+        √ Which provider should be used to instrument code for coverage? » babel
+        √ Automatically clear mock calls, instances, contexts and results before every test? ... yes
+      Step 7: --> Install jsdom library
+       If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately.
+        npm i -D jest-environment-jsdom
+      Step 8: --> Create a folder __tests__ (__ = dunder (used as a reserved keyword))
+      Step 9: --> Create a file [Eg: Header.test.js, Header.test.ts, Header.spec.js, Header.spec.ts]
+      Step 10: --> Install @babel/preset-react to make JSX work in test cases
+      Step 11: --> Include @babel/preset-react in the babel config file
+      Step 12: --> Install @testing-library/jest-dom
+
+  # Writing Test cases
+     --> To test all the textboxes, we need to use getAllByRole
+     --> We can use describe, to group the test cases, we can also use nested describes for specific grouping of test cases
+     --> We can write as "test" or "it"(alias of test) while writig the text cases
+     --> When we have fetch in our component, we need to add global fetch to mock the fetch function
+     --> To run test automatically, we need to add "watch-test": "jest --watch" and do npm run watch-test
+     --> Whenever we use fetch or state updates inside the async function, we need to wrap it inside act function
+        import { act } from "react-dom/test-utils";
+    --> When link throws an error, we need to wrap it with browser router <BrowserRouter></BrowserRouter>
+    --> In order to support "toBeInTheDocument", we need to write import "@testing-library/jest-dom"
+    --> We need to get render, screen from @testing-library/react
+        import { render, screen } from "@testing-library/react"
+    --> Before All, it will run before all the test cases
+    --> Before Each, it will run before each test cases
+    --> After All, it will run after all the test cases
+    --> After Each, it will run after each test cases
+        beforeAll(()=>{});
 
 

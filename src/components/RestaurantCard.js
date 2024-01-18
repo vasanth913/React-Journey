@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
     /* In the Props given the default value for res and for cusine given alternative name */
 
     return(
-        <div className="m-4 p-4 rounded-lg w-[300px] hover:scale-125 hover:m-30">
+        <div data-testid="resCard" className="m-4 p-4 rounded-lg w-[300px] hover:scale-125 hover:m-30">
             <img alt="briyani" src={CDN_URL+cloudinaryImageId} loading="lazy" className="rounded-lg object-cover"></img>
                 <h3 className="font-bold py-3 text-lg"> {name} </h3>
                 <h4 className="break-words"> {cuisines.join(",")} </h4>
